@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("making url shortener, accorcia is the name")
+	r := gin.Default()
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Hey Accorcia, lets shorten some urls !",
+		})
+	})
+
+	err := r.Run(":9808")
+	if err != nil {
+		panic(fmt.Sprintf("Failed to start the web server - Error: %v", err))
+	}
 }
