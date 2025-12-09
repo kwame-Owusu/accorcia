@@ -5,6 +5,11 @@
   text-align: center;
 }
 
-.main-card {
-  border: solid 1px red;
+.heading {
+  font-size: 5rem;
+}
+
+.heading-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }

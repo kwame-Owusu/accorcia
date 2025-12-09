@@ -1,22 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Playfair Display", system-ui;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #778873;
+  --secondary-color: #a1bc98;
+  --light-color: #d2dcb6;
+  --lighter-color: #f1f3e0;
+  --background-color: #f7f1de;
+  --text-color-primary: #504b38;
+  --text-color-secondary: #b9b28a;
+  --text-color-third: #9f8383;
 }
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 50vh;
+  color: var(--text-color-primary);
 }
