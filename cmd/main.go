@@ -2,10 +2,7 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/gin-gonic/gin"
-	"github.com/kwame-Owusu/accorcia/internal/handlers"
-	"github.com/kwame-Owusu/accorcia/internal/store"
 )
 
 func main() {
@@ -15,16 +12,6 @@ func main() {
 			"message": "Hey Accorcia, lets shorten some urls !",
 		})
 	})
-
-	r.POST("/short-url", func(c *gin.Context) {
-		handlers.CreateShortUrl(c)
-	})
-
-	r.GET("/:short-url", func(c *gin.Context) {
-		handlers.CreateShortUrl(c)
-	})
-
-	store.InitializeStore()
 
 	err := r.Run(":9808")
 	if err != nil {
