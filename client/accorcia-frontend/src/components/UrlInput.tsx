@@ -1,8 +1,17 @@
 import "./UrlInput.css"
 import "../App.css"
 import linkIcon from "../assets/link-icon.png"
+import { useState } from "react"
 
-const UrlInput = () => {
+interface props {
+    onShorten: (inputValue: string) => void
+}
+const UrlInput = ({ onShorten }: props) => {
+    const [inputValue, setInputValue] = useState("")
+    const handleClick = () => {
+        if (!inputValue) return
+        onShorten(inputValue)
+    }
     return (
         <div className="container">
             <div className="card-text">
@@ -15,8 +24,10 @@ const UrlInput = () => {
                     type="text"
                     id="url-input"
                     placeholder="https://your-very-long-url.com"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
                 />
-                <button className="shorten-btn">Shorten</button>
+                <button className="shorten-btn" onClick={handleClick}>Shorten</button>
 
             </div>
         </div>
