@@ -1,15 +1,15 @@
-.container {
+.copy-container {
   border: 1px solid red;
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
-  background-color: var(--lighter-color);
-  border: 1px solid var(--light-color);
+  background-color: var(--light-color);
+  border: 1px solid var(--text-color-secondary);
   border-radius: 0.9rem;
   width: 950px;
   margin-left: 2rem;
   font-family: "Playfair Display", system-ui;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .text {
@@ -27,7 +27,7 @@
   margin-top: 0.8rem;
 }
 
-#url-input {
+#copy-input {
   font-family: "Playfair Display", system-ui;
   width: 100%;
   height: 3.25rem;
@@ -39,20 +39,24 @@
   border-radius: 0.65rem;
   transition: 0.23s ease-in-out;
 }
-#url-input:focus {
+
+#copy-input:focus {
   outline: none;
-  border: 1px solid var(--light-color);
 }
 
 .copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
   cursor: pointer;
-  border: 1px solid var(--light-color);
+  border: 1px solid var(--text-color-primary);
   font-family: "Playfair Display", system-ui;
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--text-color-primary);
   border-radius: 0.6rem;
-  width: 188px;
+  width: 150px;
   background-color: var(--light-color);
   transition: background-color ease-in 0.23s;
 }
@@ -62,6 +66,6 @@
 }
 
 .copy-icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }

@@ -6,10 +6,20 @@ import { useState } from "react"
 interface props {
     onShorten: (inputValue: string) => void
 }
+
+const validiateLink = (link: string): boolean => {
+    const regex = new RegExp("^(http|https)://", "i")
+    return regex.test(link)
+}
+
 const UrlInput = ({ onShorten }: props) => {
     const [inputValue, setInputValue] = useState("")
     const handleClick = () => {
         if (!inputValue) return
+        if (!validiateLink(inputValue)) {
+            console.log("invalid input, must be a valid url link: ", inputValue)
+            return
+        }
         onShorten(inputValue)
     }
     return (

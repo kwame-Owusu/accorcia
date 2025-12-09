@@ -7,14 +7,14 @@ import { useState } from 'react'
 
 function App() {
     const [longUrl, setLongUrl] = useState("")
+    const [randomUserId] = useState(() => GenerateRandomUserId())
     const requestObj = {
         longUrl,
-        userId: "e0dba740-fc4b-4977-872c-d360239e6b10"
+        userId: randomUserId
     }
     const shortenUrl = useShortenUrl(requestObj)
-    const random = GenerateRandomUserId()
+    console.log("random user ID: ", randomUserId)
     console.log(shortenUrl)
-    console.log(random)
     return (
         <>
             <div className='main-card'>
@@ -24,7 +24,7 @@ function App() {
                 </div>
 
                 <UrlInput onShorten={setLongUrl} />
-                <CopyUrl />
+                {shortenUrl && <CopyUrl shortUrl={shortenUrl} />}
             </div>
         </>
     )

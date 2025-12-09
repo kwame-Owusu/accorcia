@@ -1,19 +1,28 @@
-import "./UrlInput.css"
+import "./CopyUrl.css"
 import "../App.css"
 import copyIcon from "../assets/copy-icon.png"
 
-const CopyUrl = () => {
-    const handleCopy = () => {
-        return "copying...."
+interface props {
+    shortUrl: string
+}
+const CopyUrl = ({ shortUrl }: props) => {
+    const handleCopy = async () => {
+        await navigator.clipboard.writeText(shortUrl)
     }
+
     return (
-        <div className="container">
+        <div className="copy-container">
             <div className="text">
                 <p>Your shortened URL is ready</p>
             </div>
 
             <div className="copy-section">
-                <button className="shorten-btn" onClick={handleCopy}>
+                <input
+                    type="text"
+                    id="copy-input"
+                    value={shortUrl}
+                />
+                <button className="copy-btn" onClick={handleCopy}>
                     <img src={copyIcon} alt="copy icon" className="copy-icon" />
                     Copy
                 </button>
