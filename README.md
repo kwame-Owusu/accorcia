@@ -15,8 +15,12 @@ or had more time to tend to it, redis would have acted more as a "hot" data stor
 | Layer              | Technology        |
 | ------------------ | ----------------- |
 | Frontend           | TypeScript, React |
-| Backend / API      | GO + Gin          |
+| Backend / API      | Go + Gin          | 
 | Database / Storage | Redis             |
+
+
+I used Gin to try it out, but I believe what has been done in this project is quite simple enough that std library can suffice.
+In the end there are only two endpoints that are being served, nothing too complex, this was just an opportunity for me to learn about Gin.
 
 ## Installation & Setup
 
@@ -46,7 +50,11 @@ go run cmd/*.go
 
 ## Demo
 
+
+https://github.com/user-attachments/assets/fec66a7a-bf9a-413d-916e-eb10e1141f1f
+
+
 ## Learning
 
 Learn a bit more about the Gin web framework for golang and also about Base58 encoding, and why it might be better
-than Base64 for some cases, I also found out that Base58 is what bitcoin uses, because it makes it encoded text more readable and easy to copy and paste around.
+than Base64 for some cases, I also found out that Base58 is what bitcoin uses, because it makes encoded text more readable and easy to copy and paste around.
